@@ -1,0 +1,17 @@
+*{margin: 0px;padding: 0px;}
+body{
+    background-image:url(image/4.jpg);
+}
+#div{width:300px;height:400px;
+    background:#B1FEF9;margin:0 auto;margin-top:150px;
+    border-radius:20px;
+}
+h3{margin-left:48px;padding-top:60px;}
+h4{margin-left:120px;padding-top:60px;font-size: 18px;}
+#cnt{width:280px;height:370px;margin-left:33px;padding-top:60px;}
+.sub{width:70px;height:30px;border:1px solid #fff;background:#eee;
+    margin-left:28px;margin-top:20px;}
+.sub1{
+    width:70px;height:30px;border:1px solid #fff;
+    background:#eee;margin-left:150px;margin-top:20px;
+}
