@@ -1,0 +1,10 @@
+*{
+	margin:0;
+	padding: 0;
+}
+ul li{
+	line-height: 40px;
+	margin: 10px;
+	background-color: CornflowerBlue;
+	text-align: center;
+}
