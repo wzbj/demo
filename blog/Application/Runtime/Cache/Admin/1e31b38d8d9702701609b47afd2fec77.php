@@ -81,12 +81,14 @@
             </div>
         </div>
         <div class="result-wrap">
-            <form name="myform" id="myform" method="post">
+            <form name="myform" id="myform" action="/demo/blog/index.php/Admin/Cate/sort"  method="post">
                 <div class="result-title">
                     <div class="result-list">
                         <a href="/demo/blog/index.php/Admin/Cate/add"><i class="icon-font"></i>新增栏目</a>
                         <!-- <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a> -->
-                        <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a>
+                        <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>
+                        <input class="btn btn-primary btn2" type="submit" value="更新排序">
+                        </a>
                     </div>
                 </div>
                 <div class="result-content">
@@ -95,7 +97,7 @@
                             <th class="tc" width="5%"><input class="allChoose" name="" type="checkbox"></th>
                             <th>排序</th>
                             <th>ID</th>
-                            <th>标题</th>
+                            <th>栏目名称</th>
                            <!--  <th>审核状态</th>
                             <th>点击</th>
                             <th>发布人</th>
@@ -103,38 +105,23 @@
                             <!-- <th>评论</th> -->
                             <th>操作</th>
                         </tr>
-                        <tr>
-                            <td class="tc"><input name="id[]" value="59" type="checkbox"></td>
-                            <td>
-                                <input name="ids[]" value="59" type="hidden">
-                                <input class="common-input sort-input" name="ord[]" value="0" type="text">
-                            </td>
-                            <td>59</td>
-                            <td title=""><a target="_blank" href="#" title=""></a> …
-                            </td>
-                            
-                            <td>
-                                <a class="link-update" href="#">修改</a>
-                                <a class="link-del" href="#">删除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="tc"><input name="id[]" value="58" type="checkbox"></td>
-                            <td>
-                                <input name="ids[]" value="58" type="hidden">
-                                <input class="common-input sort-input" name="ord[]" value="0" type="text">
-                            </td>
-                            <td>58</td>
-                            <td title=""><a target="_blank" href="#" title=""></a> …
-                            </td>
-                            
-                            <td>
-                                <a class="link-update" href="#">修改</a>
-                                <a class="link-del" href="#">删除</a>
-                            </td>
-                        </tr>
+                        <?php if(is_array($cateres)): $i = 0; $__LIST__ = $cateres;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+                                <td class="tc"><input name="id[]" value="59" type="checkbox"></td>
+                                <td>
+                                    <!-- <input name="ids[]" value="59" type="hidden"> -->
+                                    <input class="common-input sort-input" name="<?php echo ($vo["id"]); ?>" value="<?php echo ($vo["sort"]); ?>" type="text">
+                                </td>
+                                <td><?php echo ($vo["id"]); ?></td>
+                                <td title=""><a target="_blank" href="#" title="内容"><?php echo ($vo["catename"]); ?></a> 
+                                </td>
+                                
+                                <td>
+                                    <a class="link-update" href="#">修改</a>
+                                    <a class="link-del" href="#">删除</a>
+                                </td>
+                            </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                     </table>
-                    <div class="list-page"> 2 条 1/1 页</div>
+                    <!-- <div class="list-page"> 2 条 1/1 页</div> -->
                 </div>
             </form>
         </div>
