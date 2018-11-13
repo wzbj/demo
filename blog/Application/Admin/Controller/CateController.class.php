@@ -44,7 +44,9 @@ class CateController extends Controller {
         // dump($_POST);
         $cate=D('cate');
         foreach($_POST as $id=>$sort){
-            $cate->where()->setField();
+            $cate->where(array("id"=>$id))->setField('sort',$sort);
         }
+        $this->success('排序成功！'.U('lst'));
+
     }
 }
